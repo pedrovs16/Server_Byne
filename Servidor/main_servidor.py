@@ -36,7 +36,7 @@ def pickle_past():
     try:
         output = open('last_number.pkl', 'rb')
     except:
-        mydict = {'a': 1}
+        mydict = {'': 1}
         output = open('last_number.pkl', 'wb')
         pickle.dump(mydict, output)
         output.close()
@@ -74,7 +74,6 @@ def handle_client(conn, addr):
         logging.info(f'(SERVER)[{addr}] first number: {str(first_number)}')
         print(f'(SERVER)[{addr}] first number: {str(first_number)}')
 
-
         while connected:
 
             # RECEIVING RESULT
@@ -103,6 +102,7 @@ def handle_client(conn, addr):
                     add = (random.randint(0, 49)) * 2 + 1
                     conn.send(f'(SERVER)[{addr}] the odd number choose was: {str(add)}'.encode(FORMAT))
                     logging.info(f'(SERVER)[{addr}] the odd number choose was: {str(add)}')
+                    print(f'(SERVER)[{addr}] the odd number choose was: {str(add)}')
                     last_number.update({addr[0]: add})
                     output = open('last_number.pkl', 'wb')
                     pickle.dump(last_number, output)
@@ -116,6 +116,7 @@ def handle_client(conn, addr):
                     add = (random.randint(0, 49)) * 2
                     conn.send(f'(SERVER)[{addr}] the even number choose was: {str(add)}'.encode(FORMAT))
                     logging.info(f'(SERVER)[{addr}] the even number choose was: {str(add)}')
+                    print(f'(SERVER)[{addr}] the odd number choose was: {str(add)}')
                     last_number.update({addr[0]: add})
                     output = open('last_number.pkl', 'wb')
                     pickle.dump(last_number, output)
