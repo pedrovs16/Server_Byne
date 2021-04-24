@@ -1,6 +1,6 @@
 # Server_client
 ##  Sobre o aplicativo
- Esse chatBot tem o intuíto de mostrar informações de ações da B3
+
 
 ##  Módulos utilizadas
 - socket
