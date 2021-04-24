@@ -1,6 +1,6 @@
 # Server_client
 ##  Sobre o aplicativo
-
+Desafio criado pela empresa Byne, consiste em criar um serviço Server/Client. No qual o cliente escolhe entre números pares e ímpares para o servidor enviar, e o cliente soma-los ao valor inicial.
 
 ##  Módulos utilizadas
 - socket
