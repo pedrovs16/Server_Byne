@@ -24,6 +24,7 @@
 ## Pré-requisitos
 - Python instalado
 - Bibliotecas utilizadas instaladas(ex: pip install sockets)
+- Caso queira criar um servidor global, ultilizar um gerador de redes locais (LAN), exemplo o Hamachi
 
 
 ## Prática
