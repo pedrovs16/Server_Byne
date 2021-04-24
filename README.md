@@ -28,7 +28,8 @@
 
 ## Prática
 
-<img alt="chatBot" title="#logo"  src="/vent/chatBot.png">
-<hr>
+
+
+![image](https://user-images.githubusercontent.com/64927495/115974789-a11fd600-a535-11eb-9ed9-42d088bc2f6e.png)
 
 #####  Feito por Pedro Viana - Contato(https://www.linkedin.com/in/pedro-viana-886a361a7/)
