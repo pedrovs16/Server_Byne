@@ -14,7 +14,7 @@ logging.basicConfig(filename='server_client.log', level=logging.INFO,
 # GLOBAL VALUES
 HEADER = 64
 PORT = 5050
-SERVER = input('[IP ADDRESS] choose your (write "my" if the client use your own IP):')
+SERVER = input('[IP ADDRESS] choose your IP (type "my" if the client use your own IP):')
 if SERVER.upper() == 'MY':
     SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
@@ -82,8 +82,8 @@ def handle_client(conn, addr):
             if msg_length:
                 msg_length = int(msg_length)
                 msg = conn.recv(msg_length).decode(FORMAT)
-                print(f'(CLIENT)[{addr}] number return was: {msg}')
-                logging.info(f'(CLIENT)[{addr}] number return was: {msg}')
+                print(f'(CLIENT)[{addr}] returned number was: {msg}')
+                logging.info(f'(CLIENT)[{addr}] returned number was: {msg}')
 
             # RECEIVING QUESTION RESSULT
 
@@ -97,12 +97,12 @@ def handle_client(conn, addr):
                 # RESULT WAS ODD
 
                 if msg == 'O':
-                    print(f"(SERVER)[{addr}] client choose odd")
-                    logging.info(f"(SERVER)[{addr}] client choose odd")
+                    print(f"(SERVER)[{addr}] client chose odd")
+                    logging.info(f"(SERVER)[{addr}] client chose odd")
                     add = (random.randint(0, 49)) * 2 + 1
-                    conn.send(f'(SERVER)[{addr}] the odd number choose was: {str(add)}'.encode(FORMAT))
-                    logging.info(f'(SERVER)[{addr}] the odd number choose was: {str(add)}')
-                    print(f'(SERVER)[{addr}] the odd number choose was: {str(add)}')
+                    conn.send(f'(SERVER)[{addr}] the odd number chosen was: {str(add)}'.encode(FORMAT))
+                    logging.info(f'(SERVER)[{addr}] the odd number chosen was: {str(add)}')
+                    print(f'(SERVER)[{addr}] the odd number chosen was: {str(add)}')
                     last_number.update({addr[0]: add})
                     output = open('last_number.pkl', 'wb')
                     pickle.dump(last_number, output)
@@ -111,12 +111,12 @@ def handle_client(conn, addr):
                 # RESULT WAS EVEN
 
                 elif msg == 'E':
-                    print(f"(SERVER)[{addr}] client choose even")
-                    logging.info(f"(SERVER)[{addr}] client choose even")
+                    print(f"(SERVER)[{addr}] client chose even")
+                    logging.info(f"(SERVER)[{addr}] client chose even")
                     add = (random.randint(0, 49)) * 2
-                    conn.send(f'(SERVER)[{addr}] the even number choose was: {str(add)}'.encode(FORMAT))
-                    logging.info(f'(SERVER)[{addr}] the even number choose was: {str(add)}')
-                    print(f'(SERVER)[{addr}] the odd number choose was: {str(add)}')
+                    conn.send(f'(SERVER)[{addr}] the even number chosen was: {str(add)}'.encode(FORMAT))
+                    logging.info(f'(SERVER)[{addr}] the even number chosen was: {str(add)}')
+                    print(f'(SERVER)[{addr}] the odd number chosen was: {str(add)}')
                     last_number.update({addr[0]: add})
                     output = open('last_number.pkl', 'wb')
                     pickle.dump(last_number, output)
