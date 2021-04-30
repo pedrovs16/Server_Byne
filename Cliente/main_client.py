@@ -19,7 +19,7 @@ def start_client():
         add = 1
         number = client.recv(2048).decode(FORMAT)
         number = int(number.split()[-1])
-        print(f'[SERVER]{ADDR} server send : {number}')
+        print(f'[SERVER]{ADDR} server sent : {number}')
         while True:
             msg = ''
 
@@ -27,7 +27,7 @@ def start_client():
 
             for time in range(random.randint(6, 10)):
                 number += add
-                print(f'[ADD] new valor: {number}')
+                print(f'[ADD] new value: {number}')
                 sleep(0.5)
 
             # SENDING RESULT
@@ -66,7 +66,7 @@ def start_client():
 # CREATING CLIENT AND CONNECTING TO SERVER
 
 try:
-    SERVER = input('[IP ADDRESS] choose your (write "my" if the server use your own IP):')
+    SERVER = input('[IP ADDRESS] choose your IP(type "my" if the server use your own IP):')
     if SERVER.upper() == 'MY':
         SERVER = socket.gethostbyname(socket.gethostname())
     ADDR = (SERVER, PORT)
