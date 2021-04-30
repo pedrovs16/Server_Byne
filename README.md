@@ -40,4 +40,4 @@ Desafio criado pela empresa Byne, consiste em criar um serviço Server/Client. N
 ![image](https://user-images.githubusercontent.com/64927495/115974901-81d57880-a536-11eb-9a9a-6eea1f27916d.png)
 
 
-#####  Feito por Pedro Viana - Contato(https://www.linkedin.com/in/pedro-viana-886a361a7/)
+#####  Feito por Pedro Viana - Contato(https://www.linkedin.com/in/pedrovianaschroeder/)
